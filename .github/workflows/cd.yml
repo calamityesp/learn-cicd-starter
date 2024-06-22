@@ -22,7 +22,7 @@ jobs:
         run: git checkout main
 
       - name: setup go toolchain
-        run: go get github.com/google/go-github/v62
+        run: go get github.com/google/go-github/v62@v62.0.0
 
       - name: Build app
         run: scripts/buildprod.sh
