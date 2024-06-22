@@ -6,11 +6,15 @@ on:
 
 jobs:
   deploy:
-    - name: Checkout Code
-      run: git checkout main
+    name: deploy
+    runs=on: ubuntu-latest
 
-    - name: setup go toolchain
-      run: go get github.com/google/go-github/v62
+    steps:
+      - name: Checkout Code
+        run: git checkout main
 
-    - name: Build app
-      run: scripts/buildprod.sh
+      - name: setup go toolchain
+        run: go get github.com/google/go-github/v62
+
+      - name: Build app
+        run: scripts/buildprod.sh
