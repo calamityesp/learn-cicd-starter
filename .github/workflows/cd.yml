@@ -24,5 +24,8 @@ jobs:
       - name: setup go toolchain
         run: go get github.com/google/go-github/v62@v62.0.0
 
+      - name: Sync go mod vendor
+        run: go mod vendor
+
       - name: Build app
         run: scripts/buildprod.sh
